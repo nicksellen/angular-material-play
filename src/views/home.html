@@ -1,0 +1,70 @@
+<md-toolbar>
+  <div class="md-toolbar-tools">
+    <h2>Another nice header</h2>
+  </div>
+</md-toolbar>
+
+<section layout="row">
+  <md-sidenav
+      md-is-locked-open="$mdMedia('gt-md')"
+      md-component-id="left" class="md-sidenav-left">
+    <md-toolbar class="md-theme-indigo" hide-gt-md>
+      <h1 class="md-toolbar-tools">Sidebar title</h1>
+    </md-toolbar>
+    <md-content layout-padding>
+      <p>Yay, this is a lovely sidebar</p>
+      <p><a href="other" class="md-button md-primary">Another page</a></p>
+    </md-content>
+  </md-sidenav>
+
+  <md-content flex layout-padding>
+    <md-button ng-click="ctrl.openLeftMenu()" hide-gt-md>
+      <md-icon md-font-library="material-icons">menu</md-icon>
+      Open Menu
+    </md-button>
+    
+    <p hide-md show-gt-md>
+      The nav is fixed open at this "md" width, make screen narrow and it turns
+      into a nice button operated side menu.
+    </p>
+    
+    <md-button class="md-primary" ng-click="ctrl.getThings()">
+      <md-icon md-font-library="material-icons">autorenew</md-icon>
+      Load Repos
+    </md-button>
+    
+    <md-button class="md-warn" ng-click="ctrl.getThingsWithError()">
+      Get Things With Error
+    </md-button>
+
+    <md-card>
+     <md-card-content>
+       <h2>Card headline</h2>
+       <md-datepicker ng-model="birthday"></md-datepicker>
+       <md-switch ng-model="ctrl.cb1">
+        A random switch: {{ ctrl.cb1 }}
+      </md-switch>
+     </md-card-content>
+     <md-card-actions layout="row" layout-align="end center">
+       <md-button>Action 1</md-button>
+       <md-button>Action 2</md-button>
+     </md-card-actions>
+    </md-card>
+    
+    <md-list flex>
+      <md-list-item class="md-3-line" ng-repeat="repo in ctrl.repos">
+        <img ng-src="{{ repo.owner.avatar_url }}" class="md-avatar"/>
+        <div class="md-list-item-text" layout="column">
+          <h3>{{ repo.name }}</h3>
+          <h4>{{ repo.language }}</h4>
+          <p>{{ repo.description }}</p>
+        </div>
+        <md-button class="md-primary" ng-href="{{ repo.html_url }}" target="_blank">
+          Open &rarr;
+        </md-button>
+      </md-list-item>
+    </md-list>
+
+  </md-content>
+
+</section>

@@ -1,0 +1,40 @@
+<div layout-gt-sm="row" layout="column">
+  
+  <md-content flex="50">
+    <md-toolbar class="md-warn">
+      <h1 class="md-toolbar-tools">Another page :)</h1>
+    </md-toolbar>
+    <md-content layout-padding>
+      <a href="?">go home</a>
+      <foo></foo>
+      <md-card>
+       <md-card-content>
+         <h2>Card headline</h2>
+         <p>md-calendar: <md-icon style="font-size: 50px;" md-svg-icon="md-calendar"></md-icon></p>
+         <p>another icon???: <md-icon class="md-48" md-font-icon="android"></md-icon></p>
+         
+         <p><md-icon md-font-library="material-icons">account_balance</md-icon></p>
+         
+         <md-datepicker ng-model="birthday"></md-datepicker>
+         <md-switch ng-model="ctrl.cb1">
+          A random switch: {{ ctrl.cb1 }}
+        </md-switch>
+       </md-card-content>
+       <md-card-actions layout="row" layout-align="end center">
+         <md-button ng-click="ctrl.showGrid()">Open a bottom grid thing</md-button>
+       </md-card-actions>
+      </md-card>
+    </md-content>
+  </md-content>
+  
+  <md-content flex="50">
+    <md-toolbar class="md-theme-indigo">
+      <h1 class="md-toolbar-tools">Sidebar title</h1>
+    </md-toolbar>
+    <md-content layout-padding>
+      <h1>woo, flexy!</h1>
+      <a href="?">go home</a>
+    </md-content>
+  </md-content>
+  
+</div>
