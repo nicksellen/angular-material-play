@@ -8,3 +8,10 @@ node server.js
 ```
 
 Then visit [localhost:8000](http://localhost:8000).
+
+To build and run production version:
+
+```
+NODE_ENV=production $(npm bin)/webpack
+(cd public && python -m http.server)
+```
