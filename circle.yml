@@ -1,0 +1,4 @@
+post:
+  - webpack
+artifacts:
+  - public
