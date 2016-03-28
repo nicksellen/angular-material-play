@@ -1,4 +1,6 @@
-post:
-  - webpack
-artifacts:
-  - public
+dependencies:
+  post:
+    - webpack
+general:
+  artifacts:
+    - public
